@@ -15,16 +15,16 @@ public abstract class BankAccount {
         if (amount > 0) {
             balance += amount;
         } else {
-            throw new IllegalArgumentException("Jumlah setoran harus positif");
+            throw new IllegalArgumentException("Deposit amount must be positive");
         }
     }
     
     public void withdraw(double amount) {
         if (amount <= 0) {
-            throw new IllegalArgumentException("Jumlah penarikan harus positif");
+            throw new IllegalArgumentException("Withdrawal amount must be positive");
         }
         if (amount > balance) {
-            throw new IllegalArgumentException("Dana tidak mencukupi");
+            throw new IllegalArgumentException("Insufficient funds");
         }
         balance -= amount;
     }
@@ -45,6 +45,6 @@ public abstract class BankAccount {
         return accountHolder;
     }
     
-    // Each account type must implement its own interest calculation
+    // Each account type must implement its own interest calculation.
     public abstract void calculateInterest();
 }
