@@ -1,5 +1,8 @@
 package oop.lab;
 
+/**
+ * Base class for all types of banking cards
+ */
 public class Card {
     private String cardNumber;
     private String cardHolder;
@@ -9,6 +12,10 @@ public class Card {
         this.cardHolder = cardHolder;
     }
     
+    /**
+     * Returns the interest rate associated with this card type
+     * @return interest rate as a percentage
+     */
     public double getInterestRate() {
         return 0.0; // Default interest rate
     }
